@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  A Python Lambda which demonstrates running a lambda locally with AWS SAM.
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+  EfficientLearningFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: src/
+      Handler: index.lambda_handler
+      Runtime: python3.7
+      Environment:
+        Variables:
+          S3_BUCKET: ''
+          S3_FOLDER: ''
+          S3_CONFIG: ''
