@@ -5,6 +5,7 @@ print("loading lambda")
 
 
 def lambda_handler(event, context):
+    question = "A question"
     return {
         'statusCode': 200,
         'question': question,
